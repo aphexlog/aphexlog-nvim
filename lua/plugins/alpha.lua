@@ -11,33 +11,48 @@ return {
     -- Setup dashboard theme
     local dashboard = require("alpha.themes.dashboard")
 
+    dashboard.file_icons = "devicons"
+
     -- Custom header with ASCII art and a welcome message
     dashboard.section.header.val = {
-      " Welcome back to the matrix, Aphexlog",
-      [[          ▀████▀▄▄              ▄█ ]],
-      [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-      [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-      [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-      [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-      [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-      [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-      [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-      [[   █   █  █      ▄▄           ▄▀   ]],
+      " Welcome back to the cosmos, Aphexlog",
+      [[                                         )  (  (    (                      ]],
+      [[                                         (  )  () @@  )  (( (              ]],
+      [[                                     (      (  )( @@  (  )) ) (            ]],
+      [[                                   (    (  ( ()( /---\   (()( (            ]],
+      [[     _______                            )  ) )(@ !O O! )@@  ( ) ) )        ]],
+      [[    <   ____)                      ) (  ( )( ()@ \ o / (@@@@@ ( ()( )      ]],
+      [[ /--|  |(  o|                     (  )  ) ((@@(@@ !o! @@@@(@@@@@)() (      ]],
+      [[|   >   \___|                      ) ( @)@@)@ /---\-/---\ )@@@@@()( )      ]],
+      [[|  /---------+                    (@@@@)@@@( // /-----\ \\ @@@)@@@@@(  .    ]],
+      [[| |    \ =========______/|@@@@@@@@@@@@@(@@@ // @ /---\ @ \\ @(@@@(@@@ .  .  ]],
+      [[|  \   \\=========------\|@@@@@@@@@@@@@@@@@ O @@@ /-\ @@@ O @@(@@)@@ @   .  ]],
+      [[|   \   \----+--\-)))           @@@@@@@@@@ !! @@@@ % @@@@ !! @@)@@@ .. .    ]],
+      [[|   |\______|_)))/             .    @@@@@@ !! @@ /---\ @@ !! @@(@@@ @ . .   ]],
+      [[ \__==========           *        .    @@ /MM  /\O   O/\  MM\ @@@@@@@. .    ]],
+      [[    |   |-\   \          (       .      @ !!!  !! \-/ !!  !!! @@@@@ .       ]],
+      [[    |   |  \   \          )   -cfbd-   .  @@@@ !!     !!  .(. @.  .. .      ]],
+      [[    |   |   \   \        (    /   .(  . \)). ( |O  )( O! @@@@ . )      .    ]],
+      [[    |   |   /   /         ) (      )).  ((  .) !! ((( !! @@ (. ((. .   .    ]],
+      [[    |   |  /   /   ()  ))   ))   .( ( ( ) ). ( !!  )( !! ) ((   ))  ..      ]],
+      [[    |   |_<   /   ( ) ( (  ) )   (( )  )).) ((/ |  (  | \(  )) ((. ).       ]],
+      [[____<_____\\__\__(___)_))_((_(____))__(_(___.oooO_____Oooo.(_(_)_)((_       ]],
+      [[=========================================================================    ]],
     }
 
     -- Button configuration
     dashboard.section.buttons.val = {
-      dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-      dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
-      dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+      dashboard.button("f", "👽  Find Files", ":Telescope find_files <CR>"),
+      dashboard.button("e", "🎄  New File", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("r", "🕸️  Recent Files", ":Telescope oldfiles <CR>"),
+      dashboard.button("t", "🛸  Search Text", ":Telescope live_grep <CR>"),
+      dashboard.button("c", "🧙  Config Settings", ":e ~/.config/nvim/init.vim<CR>"),
+      dashboard.button("q", "🎃  Quit Neovim", ":qa<CR>"),
     }
 
     -- Footer setup with a custom message
     local function footer()
-      return "Don't Stop Until You are Proud..."
+      return "Aphexlog's personal neov dashboard"
     end
     dashboard.section.footer.val = footer()
 
