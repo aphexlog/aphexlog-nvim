@@ -15,7 +15,6 @@ return {
 
     -- Custom header with ASCII art and a welcome message
     dashboard.section.header.val = {
-      " Welcome back to the cosmos, Aphexlog",
       [[                                         )  (  (    (                      ]],
       [[                                         (  )  () @@  )  (( (              ]],
       [[                                     (      (  )( @@  (  )) ) (            ]],
@@ -31,7 +30,7 @@ return {
       [[|   |\______|_)))/             .    @@@@@@ !! @@ /---\ @@ !! @@(@@@ @ . .   ]],
       [[ \__==========           *        .    @@ /MM  /\O   O/\  MM\ @@@@@@@. .    ]],
       [[    |   |-\   \          (       .      @ !!!  !! \-/ !!  !!! @@@@@ .       ]],
-      [[    |   |  \   \          )   -cfbd-   .  @@@@ !!     !!  .(. @.  .. .      ]],
+      [[    |   |  \   \          )   ))  )(   .  @@@@ !!     !!  .(. @.  .. .      ]],
       [[    |   |   \   \        (    /   .(  . \)). ( |O  )( O! @@@@ . )      .    ]],
       [[    |   |   /   /         ) (      )).  ((  .) !! ((( !! @@ (. ((. .   .    ]],
       [[    |   |  /   /   ()  ))   ))   .( ( ( ) ). ( !!  )( !! ) ((   ))  ..      ]],
@@ -44,15 +43,14 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("f", "👽  Find Files", ":Telescope find_files <CR>"),
       dashboard.button("e", "🎄  New File", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("r", "🕸️  Recent Files", ":Telescope oldfiles <CR>"),
+      dashboard.button("r", "🧙  Recent Files", ":Telescope oldfiles <CR>"),
       dashboard.button("t", "🛸  Search Text", ":Telescope live_grep <CR>"),
-      dashboard.button("c", "🧙  Config Settings", ":e ~/.config/nvim/init.vim<CR>"),
       dashboard.button("q", "🎃  Quit Neovim", ":qa<CR>"),
     }
 
     -- Footer setup with a custom message
     local function footer()
-      return "Aphexlog's personal neov dashboard"
+      return "Welcome home Aphexlog"
     end
     dashboard.section.footer.val = footer()
 
