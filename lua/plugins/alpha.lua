@@ -45,7 +45,7 @@ return {
       dashboard.button("e", "🎄  New File", ":ene <BAR> startinsert <CR>"),
       dashboard.button("r", "🧙  Recent Files", ":Telescope oldfiles <CR>"),
       dashboard.button("t", "🛸  Search Text", ":Telescope live_grep <CR>"),
-      dashboard.button("q", "🎃  Quit Neovim", ":qa<CR>"),
+      dashboard.button("q", "🎃  Quit", ":qa<CR>"),
     }
 
     -- Footer setup with a custom message
