@@ -51,3 +51,6 @@ require("lazy").setup({
     },
   },
 })
+
+-- uncomment this line an add your own color scheme to override the default
+-- vim.cmd.colorscheme("catppuccin")
