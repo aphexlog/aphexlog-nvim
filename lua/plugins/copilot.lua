@@ -3,74 +3,54 @@ return {
   "zbirenbaum/copilot.lua",
 
   config = function()
-    require("copilot").setup()
-
-    filetypes = {
-      -- Web Development
-      "typescript",
-      "javascript",
-      "typescriptreact",
-      "javascriptreact",
-      "html",
-      "css",
-      "scss",
-      "vue",
-      "svelte",
-      
-      -- Programming Languages
-      "python",
-      "lua",
-      "ruby",
-      "go",
-      "rust",
-      "java",
-      "cpp",
-      "c",
-      "csharp",
-      "php",
-      
-      -- Data & Config
-      "json",
-      "yaml",
-      "toml",
-      "xml",
-      
-      -- Shell & Scripts
-      "bash",
-      "fish",
-      "zsh",
-      "sh",
-      
-      -- Documentation
-      "markdown",
-      "mdx",
-      
-      -- DevOps & Infrastructure
-      "dockerfile",
-      "docker-compose",
-      "terraform",
-      "hcl",
-      "kubernetes",
-      
-      -- Version Control & CI
-      "gitignore",
-      "gitcommit",
-      "github-actions-yaml",
-      "gitlab-ci",
-      
-      -- Editors & IDE
-      "vim",
-      "neovim",
-      
-      -- Database
-      "sql",
-      "plsql",
-      "mongodb",
-      
-      -- Others
-      "conf",
-      "ini",
-      "env"
-    }
+    require("copilot").setup({
+      panel = {
+        enabled = true,
+        auto_refresh = true,
+      },
+      filetypes = {
+        javascript = "typescript",
+        typescript = "typescript",
+        javascriptreact = "typescriptreact",
+        typescriptreact = "typescriptreact",
+        c = "cpp",
+        cpp = "cpp",
+        objc = "cpp",
+        objcpp = "cpp",
+        python = "python",
+        ruby = "ruby",
+        lua = "lua",
+        go = "go",
+        rust = "rust",
+        java = "java",
+        kotlin = "java",
+        scala = "java",
+        shell = "bash",
+        fish = "bash",
+        zsh = "bash",
+        bash = "bash",
+        sh = "bash",
+        html = "html",
+        css = "css",
+        scss = "css",
+        less = "css",
+        json = "json",
+        yaml = "yaml",
+        markdown = "markdown",
+        vim = "vim",
+        tex = "latex",
+        latex = "latex",
+        sql = "sql",
+        graphql = "graphql",
+        php = "php",
+        hack = "php",
+        hacked = "php",
+        csharp = "csharp",
+        fsharp = "fsharp",
+        vb = "vb",
+        vimwiki = "vimwiki",
+        make = "make",
+      },
+    })
   end,
 }
