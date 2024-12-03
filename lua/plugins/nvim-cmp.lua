@@ -20,8 +20,12 @@ return {
 
           local kind1 = kind_priority[entry1:get_kind()] or 100
           local kind2 = kind_priority[entry2:get_kind()] or 100
-          if kind1 ~= kind2 then
-            return kind1 < kind2
+          
+          -- Return true if entry1 should come before entry2
+          if kind1 < kind2 then
+            return true
+          elseif kind1 > kind2 then
+            return false
           end
         end,
         cmp.config.compare.offset,
