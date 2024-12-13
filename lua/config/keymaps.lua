@@ -3,3 +3,7 @@
 -- Add any additional keymaps here
 --
 local map = LazyVim.safe_keymap_set
+
+-- create a keymap to run the following command :TodoTelescope
+
+map("n", "<leader>tt", ":TodoTelescope<CR>", { noremap = true, silent = true })
