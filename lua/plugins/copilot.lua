@@ -10,17 +10,20 @@ return {
         hide_during_completion = true,
         debounce = 75,
         keymap = {
-          accept = "<M-l>",
-          accept_word = false,
-          accept_line = false,
-          -- next = "<M-]>",
-          -- prev = "<M-[>",
-          -- dismiss = "<C-]>",
+          accept = "<C-M-j>", -- Accept suggestion (downward logic)
+          accept_word = "<C-M-k>", -- Accept word (upward logic)
+          accept_line = "<C-M-l>", -- Accept line (rightward logic)
+          next = "<C-M-n>", -- Navigate to next suggestion
+          prev = "<C-M-p>", -- Navigate to previous suggestion
+          dismiss = "<C-M-h>", -- Dismiss suggestion (leftward logic)
         },
       },
       panel = {
         enabled = true,
         auto_refresh = true,
+        keymap = {
+          toggle = "<C-M-m>", -- Toggle Copilot panel
+        },
       },
       filetypes = {
         yaml = true,
