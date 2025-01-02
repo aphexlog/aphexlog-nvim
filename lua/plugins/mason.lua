@@ -15,6 +15,7 @@ return {
       "ruff",
       "terraform-ls",
       "vls",
+      "jq",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
