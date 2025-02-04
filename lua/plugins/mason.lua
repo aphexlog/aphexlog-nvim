@@ -16,6 +16,7 @@ return {
       "terraform-ls",
       "vls",
       "jq",
+      "tailwindcss-language-server",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
