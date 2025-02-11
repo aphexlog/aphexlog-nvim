@@ -18,5 +18,5 @@ opt.linebreak = true -- Wrap lines at convenient points
 opt.expandtab = true -- Use spaces instead of tabs
 opt.cursorline = true -- Enable highlighting of the current line
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.winblend = 5 -- Very subtle transparency (5%) for floating windows
-opt.pumblend = 5 -- Very subtle transparency (5%) for popup menus
+-- opt.winblend = 5 -- Very subtle transparency (5%) for floating windows
+-- opt.pumblend = 5 -- Very subtle transparency (5%) for popup menus

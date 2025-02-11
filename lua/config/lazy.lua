@@ -41,9 +41,6 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
@@ -55,3 +52,5 @@ require("lazy").setup({
 
 -- uncomment this line an add your own color scheme to override the default
 vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("tokyodark")
+-- vim.cmd.colorscheme("tokyonight")
