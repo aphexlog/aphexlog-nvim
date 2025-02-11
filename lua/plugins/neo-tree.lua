@@ -18,9 +18,6 @@ return {
     window = {
       mappings = {
         ["P"] = "toggle_preview",
-        config = {
-          use_float = true,
-        },
         ["Y"] = function(state)
           local node = state.tree:get_node()
           local filepath = node:get_id()
