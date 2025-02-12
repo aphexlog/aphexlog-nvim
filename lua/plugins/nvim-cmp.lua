@@ -5,20 +5,30 @@ return {
     "L3MON4D3/LuaSnip", -- Snippet engine
     "saadparwaiz1/cmp_luasnip", -- Snippet adapter
   },
-  ---@param opts table
+  enabled = true,
   opts = function(_, opts)
     local cmp = require("cmp")
 
-    -- Disable automatic completion
+    -- Ensure opts is a table
+    opts = opts or {}
+
+    -- Fix `autocomplete` issue
     opts.completion = {
-      autocomplete = false,
+      autocomplete = {
+        require("cmp.types").cmp.TriggerEvent.InsertEnter,
+        require("cmp.types").cmp.TriggerEvent.TextChanged,
+      },
     }
 
-    -- Define key mappings
-    opts.mapping = vim.tbl_deep_extend("force", opts.mapping, {
+    -- Ensure opts.mapping is a table before extending
+    opts.mapping = vim.tbl_deep_extend("force", opts.mapping or {}, {
       ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu
       ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
-      ["<CR>"] = cmp.config.disable, -- Disable Enter key for confirmation
+      ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Only confirm explicitly selected item
+      ["<Tab>"] = cmp.mapping.select_next_item(), -- Move down in the menu
+      ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- Move up in the menu
+      ["<C-j>"] = cmp.mapping.select_next_item(), -- Alternative: Move down
+      ["<C-k>"] = cmp.mapping.select_prev_item(), -- Alternative: Move up
     })
 
     -- Set up sorting priorities
