@@ -11,6 +11,9 @@ return {
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local cmp = require("cmp")
+    opts.completion = {
+      autocomplete = false  -- Disable automatic completion
+    }
     opts.sorting = {
       priority_weight = 100,
       comparators = {
