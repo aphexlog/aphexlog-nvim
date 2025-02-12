@@ -1,7 +1,9 @@
 return {
   "zbirenbaum/copilot.lua",
   config = function()
-    require("copilot").setup({
+    local copilot = require("copilot")
+    
+    copilot.setup({
       suggestion = {
         enabled = true,
         auto_trigger = true,
@@ -35,5 +37,14 @@ return {
         ["."] = true,
       },
     })
+
+    -- Add commands to enable/disable Copilot suggestions
+    vim.api.nvim_create_user_command("CopilotDisable", function()
+      copilot.suggestion.toggle_auto_trigger()
+    end, {})
+    
+    vim.api.nvim_create_user_command("CopilotEnable", function()
+      copilot.suggestion.toggle_auto_trigger()
+    end, {})
   end,
 }
