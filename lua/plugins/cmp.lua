@@ -1,20 +1,27 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp", -- use suggestions from the LSP
-
-    -- Snippet engine. Required for nvim-cmp to work, even if you don't
-    -- intend to use custom snippets.
-    "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- adapter for the snippet engine
+    "hrsh7th/cmp-nvim-lsp", -- LSP suggestions
+    "L3MON4D3/LuaSnip", -- Snippet engine
+    "saadparwaiz1/cmp_luasnip", -- Snippet adapter
   },
-  ---@param opts cmp.ConfigSchema
+  ---@param opts table
   opts = function(_, opts)
     local cmp = require("cmp")
+
+    -- Disable automatic completion
+    opts.completion = {
+      autocomplete = false,
+    }
+
+    -- Define key mappings
     opts.mapping = vim.tbl_deep_extend("force", opts.mapping, {
-      ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-      ["<CR>"] = cmp.config.disable,
+      ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu
+      ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+      ["<CR>"] = cmp.config.disable, -- Disable Enter key for confirmation
     })
+
+    -- Set up sorting priorities
     opts.sorting = {
       priority_weight = 100,
       comparators = {
@@ -27,6 +34,14 @@ return {
         cmp.config.compare.order,
       },
     }
+
+    -- Define completion sources
+    opts.sources = cmp.config.sources({
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "buffer" },
+      { name = "path" },
+    })
 
     return opts
   end,
