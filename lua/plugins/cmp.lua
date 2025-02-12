@@ -11,9 +11,10 @@ return {
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local cmp = require("cmp")
-    opts.completion = {
-      autocomplete = false  -- Disable automatic completion
-    }
+    opts.mapping = vim.tbl_deep_extend("force", opts.mapping, {
+      ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+      ["<CR>"] = cmp.config.disable,
+    })
     opts.sorting = {
       priority_weight = 100,
       comparators = {
