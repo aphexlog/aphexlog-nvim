@@ -43,15 +43,20 @@ return {
       if not vim.fn.has("uuid") then
         vim.fn.uuid = function()
           local handle = io.popen("uuidgen")
-          local result = handle:read("*a")
-          handle:close()
-          return result:gsub("\n", "")
+          if handle then
+            local result = handle:read("*a")
+            handle:close()
+            return result:gsub("\n", "")
+          end
+          return nil
         end
       end
 
       -- Initialize CopilotChat
       local copilot_chat = require("CopilotChat")
-      copilot_chat.setup(opts)
+      if copilot_chat then
+        copilot_chat.setup(opts)
+      end
 
       -- Set up Copilot completion mappings
       vim.api.nvim_set_keymap("i", "<C-M-j>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
