@@ -17,6 +17,7 @@ return {
       "vls",
       "jq",
       "tailwindcss-language-server",
+      "biome",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
