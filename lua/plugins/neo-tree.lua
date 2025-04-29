@@ -26,6 +26,14 @@ return {
           -- Optionally, display a message to confirm the action
           vim.notify("Copied absolute path to clipboard:\n" .. filepath)
         end,
+        ["<C-y>"] = function(state)
+          local node = state.tree:get_node()
+          local filename = node:get_id():match("([^/]+)$")
+          -- Copy the filename to the system clipboard
+          vim.fn.setreg("+", filename)
+          -- Optionally, display a message to confirm the action
+          vim.notify("Copied filename to clipboard:\n" .. filename)
+        end,
       },
     },
   },
